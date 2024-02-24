@@ -27,11 +27,11 @@ jobs:
 
       #- name: Run migrations
       #  run: dotnet run -- "${{ secrets.CONNECTION_STRING }}" # Set your connection string as a secret in your repository settings
-      #  working-directory: ./src/Retrohof.DbMigrator # Replace with your project name
+      #  working-directory: ./src/AgileSeo.DbMigrator # Replace with your project name
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-        working-directory: ./src/Retrohof.Web # Replace with your project name
+        working-directory: ./src/AgileSeo.Web # Replace with your project name
   
       - name: Generate authserver.pfx
         run: dotnet dev-certs https -v -ep ${{env.DOTNET_ROOT}}/myapp/authserver.pfx -p dcd3262A45! # Replace with your password
